@@ -1,0 +1,286 @@
+﻿@model AggriPortal.API.Resources.PreviewQuoteResponseDto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    @*<link rel="stylesheet" href="style.css" media="all" />*@
+<style>
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  position: relative;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  color: #555555;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-family: SourceSansPro;
+}
+
+header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+#invoice-title h3{
+    margin:30px auto;
+    text-align:center;
+    font-size:40px;
+    font-weight:700;
+
+}
+#logo {
+    float: left;
+    margin-top: 8px;
+}
+
+#logo img {
+  height: 70px;
+}
+
+#barcode {
+    float: right;
+    text-align: right;
+}
+
+
+#contact-details {
+
+  margin:50px 0 10px 0;
+}
+
+#contact-en {
+    float: left;
+    padding-left: 6px;
+    border-left: 2px solid #0087C3;
+}
+#contact-ar {
+    float: right;
+    padding-right: 6px;
+    border-right: 2px solid #0087C3;
+    text-align:right;
+}
+
+h2.name {
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+}
+
+
+.invoice-header {
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+.bg-gray {
+    background: #EEEEEE;
+}
+
+#invoice-details th, #invoice-header th {
+    padding: 5px;
+    white-space: nowrap;
+    font-weight: normal;
+    font-weight: 600;
+}
+
+#invoice-details td, #invoice-header td {
+    text-align: center;
+    padding: 5px;
+}
+
+#invoice-details th.th_en {
+    text-align:left;
+    width:15%
+}
+#invoice-details th.th_ar {
+    text-align: right;
+    width: 15%
+}
+
+table .total {
+  background: #57B223;
+  color: #FFFFFF;
+}
+
+table tbody tr:last-child td {
+  border: none;
+}
+
+#invoice-details tfoot td, #invoice-details tfoot td {
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border-bottom: none;
+    font-size: 1.2em;
+    white-space: nowrap;
+    border-top: 1px solid #AAAAAA;
+}
+
+table tfoot tr:first-child td {
+  border-top: none;
+}
+
+table tfoot tr:last-child td {
+  color: #57B223;
+  font-size: 1.4em;
+  border-top: 1px solid #57B223;
+
+}
+
+table tfoot tr td:first-child {
+  border: none;
+}
+
+/*footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}*/
+</style>
+</head>
+<body>
+    <header class="clearfix">
+        <div id="logo">
+            <img src="concord-logo.png">
+        </div>
+        <div id="barcode">
+            <img src="barcode.jpg" alt="invoice barcode" width="150" />
+        </div>
+    </header>
+    <main>
+        <div id="invoice-title">
+            <h3>INVOICE (فاتورة)</h3>
+        </div>
+        <table class="invoice-header" border="1" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <th>Invoice Date:</th>
+                    <td>@Model.QuoteInfo.QuotationStartDate.ToString("dd-MMM-yyyy")</td>
+                    <th>:تاريخ الفاتورة</th>
+                    <th>Client Name:</th>
+                    <td>@Model.InsuredInfo.FirstName</td>
+                    <th>:اسم العميل</th>
+                </tr>
+                <tr>
+                    <th>Reference No.:</th>
+                    <td>RC-MT-20-03-29-1001</td>
+                    <th>الرقم المرجعي</th>
+                    <th>Mobile No.:</th>
+                    <td>+9660000000000</td>
+                    <th>رقم الجوال</th>
+                </tr>
+            </tbody>
+        </table>
+        <table id="invoice-details" border="1" cellspacing="0" cellpadding="0">
+            <thead>
+                <!--<tr>
+                    <th class="no">#</th>
+                    <th class="desc">DESCRIPTION</th>
+                    <th class="unit">UNIT PRICE</th>
+                    <th class="qty">QUANTITY</th>
+                    <th class="total">TOTAL</th>
+                </tr>-->
+                <tr>
+                    <th class="th_en">Description</th>
+                    <th colspan="2"></th>
+                    <th class="th_ar">البيان</th>
+                </tr>
+            </thead>
+            <tbody class="bg-gray">
+                <tr>
+                    <th class="th_en">Policy No.:</th>
+                    <td colspan="2">P/101/13101/2018/00291</td>
+                    <th class="th_ar">:رقم الوثيقة</th>
+                </tr>
+                <tr>
+                    <th class="th_en">Product:</th>
+                    <td>@Model.QuoteInfo.Product.Name</td>
+                    <td>@Model.QuoteInfo.Product.NameAr </td>
+                    <th class="th_ar">:نوع التأمين</th>
+                </tr>
+                <tr>
+                    <th class="th_en">Insurance Company:</th>
+                    <td>@Model.QuoteInfo.InsuranceCompany.Name</td>
+                    <td>@Model.QuoteInfo.InsuranceCompany.NameAr</td>
+                    <th class="th_ar">:شركة التأمين</th>
+                </tr>
+                <tr>
+                    <th class="th_en">Period From:</th>
+                    <td colspan="2">13-Sep-2018</td>
+                    <th class="th_ar">:من الفترة</th>
+                </tr>
+                <tr>
+                    <th class="th_en">To:</th>
+                    <td colspan="2">12-Sep-2019</td>
+                    <th class="th_ar">:إلي</th>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3" class="th_ar">Net Premium (قسط التأمين)</th>
+                    <td>$5,200.00</td>
+                </tr>
+                <tr>
+                    <th colspan="3" class="th_ar">Admin Fees (رسوم إدارية)</th>
+                    <td>$1,300.00</td>
+                </tr>
+                <tr>
+                    <th colspan="3" class="th_ar">Discount (خصم)</th>
+                    <td>$6,500.00</td>
+                </tr>
+                <tr>
+                    <th colspan="3" class="th_ar">VAT (ضريبة القيمة المضافة)</th>
+                    <td>$6,500.00</td>
+                </tr>
+                <tr>
+                    <th colspan="3" class="th_ar">Total Premium (إجمالي المبلغ)</th>
+                    <td>$6,500.00</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="contact-details" class="clearfix">
+            <div id="contact-en">
+                <h2 class="name">Concord Insurance Brokerage</h2>
+                <div>
+                    C.R.: 4030288992<br />
+                    P.O.Box 171 55, Jeddah 21484, KSA<br />
+                </div>
+                <div>T: +966 12 668 8333, F: +966 12 668 8222</div>
+            </div>
+            <div id="contact-ar">
+                <h2 class="name">شركة كونكورد لوساطة التأمين</h2>
+                <div>
+                    س.ت.: 403028899<br />
+                    ص.ب.: 17155 ، جدة 21484 ، المملكة العربية السعودية
+                </div>
+                <div>+96612668ف: 966126688222+  ت: 8333</div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        Invoice was created on a computer and is valid without the signature and seal.
+    </footer>
+</body>
+</html>

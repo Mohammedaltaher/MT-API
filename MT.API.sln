@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MT.API", "MT.API\MT.API.csproj", "{BAB36CD2-669D-46F3-A35C-0504729E4818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAB36CD2-669D-46F3-A35C-0504729E4818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB36CD2-669D-46F3-A35C-0504729E4818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB36CD2-669D-46F3-A35C-0504729E4818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB36CD2-669D-46F3-A35C-0504729E4818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C2FA142-9F3A-42CF-AF31-C89AA6AE4E68}
+	EndGlobalSection
+EndGlobal

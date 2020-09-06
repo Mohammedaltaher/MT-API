@@ -1,0 +1,47 @@
+﻿[
+  {
+    "insuredId": 2028435937,
+    "buildingNumber": 3822,
+    "street": "رياض الروضة",
+    "district": "حي الملك فيصل",
+    "city": "الرياض",
+    "postalCode": 7014,
+    "additionalNumber": 13215
+  },
+  {
+    "insuredId": 2154692467,
+    "buildingNumber": 2997,
+    "street": "طريق الملك عبدالله الفرعي",
+    "district": "حي بئر عثمان",
+    "city": "المدينة المنورة",
+    "postalCode": 42331,
+    "additionalNumber": 6492
+  },
+  {
+    "insuredId": 2266076906,
+    "buildingNumber": 2743,
+    "street": "عمرو بن ابي زهير",
+    "district": "حي قلعة مخيط",
+    "city": "المدينة",
+    "postalCode": 42352,
+    "additionalNumber": 8369
+  },
+  {
+    "insuredId": 1046403927,
+    "buildingNumber": 2355,
+    "street": "طريق مكة جدة القديم",
+    "district": "حي ابو كبير",
+    "city": "المدينة المنورة",
+    "postalCode": 24396,
+    "additionalNumber": 9151
+  },
+  {
+    "insuredId": 2028435937,
+    "buildingNumber": 9331,
+    "street": "عبدالعزيز بن يحيي المكي",
+    "district": "حي الدار",
+    "city": "المدينة",
+    "postalCode": 24322,
+    "additionalNumber": 3171
+  }
+]
